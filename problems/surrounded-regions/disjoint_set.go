@@ -41,7 +41,6 @@ func (this *DisjointSet) Connect(a, b int) {
     a, b = this.Find(a), this.Find(b)
     if a != b {
         this.id[b] = this.id[a]
-        // this.id[a] = this.id[b]
 
         this.count--
     }
@@ -77,17 +76,11 @@ func solve(grid [][]byte) {
     }
     for i, _ := range grid {
         for j, _ := range grid[i] {
-            fmt.Print(i, j, set.id[i * n + j], "\n")
-            fmt.Print(start, set.id[start],"\n")
-
             if grid[i][j] == 'O' && !set.AreConnected(i * n + j, start) {
                 grid[i][j] = 'X'
             }
         }
     }
-
-    fmt.Print(set.id, "\n")
-    fmt.Print(grid, "\n")
 }
 
 func main() {
@@ -99,32 +92,6 @@ func main() {
         []byte("XXOXO"),
     }
     solve(input)
-    //
-    // input = [][]byte{}
-    // solve(input)
-    //
-    // input := [][]byte{
-    //     []byte("OOO"),
-    //     []byte("OOO"),
-    //     []byte("OOO"),
-    // }
-    // solve(input)
-    //
-    // input := [][]byte{
-    //     []byte("XXXX"),
-    //     []byte("XOOX"),
-    //     []byte("XXOX"),
-    //     []byte("XOXX"),
-    // }
-    // solve(input)
-    // input := [][]byte{
-    //     []byte("OXOOXX"),
-    //     []byte("OXXXOX"),
-    //     []byte("XOOXOO"),
-    //     []byte("XOXXXX"),
-    //     []byte("OOXOXX"),
-    //     []byte("XXOOOO"),
-    // }
-    // solve(input)
+    fmt.Print(input)
 
 }
