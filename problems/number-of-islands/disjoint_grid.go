@@ -51,7 +51,7 @@ func (this *DisjointGrid) find(idx GridIndex) GridIndex {
 
     // Compress path.
     for element := idx; !equal(element, root); {
-        parent := this.getParent(root)
+        parent := this.getParent(element)
         this.setParent(element, root)
         element = parent
     }
