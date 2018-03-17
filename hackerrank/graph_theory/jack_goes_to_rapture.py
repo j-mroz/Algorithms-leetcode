@@ -29,7 +29,6 @@ def prim_mst(adjlist, src):
         adj_not_visited = ((c, x)  for (x, c) in adjlist[u] if not x in mst)
         for vcost, v in adj_not_visited:
             heapq.heappush(queue, (vcost, u, v))
-            heapq.heapreplace
 
     return mst
 
