@@ -12,7 +12,7 @@ def solution(A):
     divisors_counter = defaultdict(int)
 
     # This is O(n log n) because those two loop are doing
-    # n + n/2 + n/3 + ... n/n iterations at most, so it's harmonic series.
+    # n + n/2 + n/3 + ... + n/n iterations at most, so it's n times harmonic series.
     i = 0
     while i < values_count:
         value = values[i]
