@@ -5,7 +5,7 @@ using namespace std;
 
 int solution(int N) {
     static const size_t bit_count = 32;
-
+    
     auto binary_sequence = bitset<bit_count>(N);
 
     size_t start_bit = 0;
